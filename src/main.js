@@ -15,6 +15,9 @@ app.use(cors());
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+// test home route
 app.use('/', require('./routes/home.js'));
+// account route
+app.use('/', require('./routes/account.js'));
 
 app.listen(PORT, () => logger.info(`Running http://localhost:${PORT}`));
