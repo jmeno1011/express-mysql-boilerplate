@@ -3,7 +3,7 @@ const logger = require('../config/winston');
 const { authenticateAccessToken } = require('../models/jwt');
 const route = express.Router();
 
-route.get('/payload', authenticateAccessToken, (req, res) => {
+route.get('/payload', (req, res) => {
   const id = req.decoded.id;
   return res
     .status(200)

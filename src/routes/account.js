@@ -20,13 +20,20 @@ route.post('/login', (req, res, next) => {
   let accessToken = generateAccessToken(user);
   let refreshToken = generateRefreshToken(user);
 
+  res.cookie('user', accessToken, {
+    httpOnly: true,
+  });
+
   return res
     .status(200)
     .send({ msg: '로그인 되셨습니다.', act: accessToken, rfst: refreshToken });
 });
 
-route.get('/check',(req, res)=>{
-    
-})
+route.get('/check', (req, res) => {});
+
+route.get('/logout', (req, res) => {
+  res.clearCookie('user');
+  res.status(200).send({ code: 200, msg: '로그아웃 되었습니다.' });
+});
 
 module.exports = route;
