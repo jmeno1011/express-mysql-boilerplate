@@ -25,4 +25,8 @@ route.post('/login', (req, res, next) => {
     .send({ msg: '로그인 되셨습니다.', act: accessToken, rfst: refreshToken });
 });
 
+route.get('/check',(req, res)=>{
+    
+})
+
 module.exports = route;

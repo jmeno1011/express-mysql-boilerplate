@@ -4,6 +4,10 @@ const cors = require('cors');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const logger = require('./config/winston');
+const home = require('./routes/home.js');
+const account = require('./routes/account.js');
+const api = require('./routes/api.js');
+const { authenticateAccessToken } = require('./models/jwt');
 
 const PORT = process.env.PORT || 4000;
 const app = express();
@@ -16,8 +20,9 @@ app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 // test home route
-app.use('/', require('./routes/home.js'));
+app.use('/', home);
 // account route
-app.use('/', require('./routes/account.js'));
+app.use('/', account);
+app.use('/api', authenticateAccessToken, api);
 
 app.listen(PORT, () => logger.info(`Running http://localhost:${PORT}`));
