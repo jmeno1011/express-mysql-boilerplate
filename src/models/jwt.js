@@ -20,11 +20,15 @@ exports.generateRefreshToken = (id) => {
 // accessToken 유효성 검사
 exports.authenticateAccessToken = (req, res, next) => {
   const secretAccessToken = process.env.ACCESS_TOKEN_SECRET;
+  console.log(req.headers.cookie.split(" ")[1]);
 
   // const token = req.headers.authorization.split(" ")[1];
   // console.log(token);
 
-  const token = req.cookies.user;
+  // const token = req.cookies.user;
+  // console.log(token);
+
+  const token = req.headers.cookie.split("=")[1]
   console.log(token);
 
   try {
