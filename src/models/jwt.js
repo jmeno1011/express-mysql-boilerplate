@@ -20,7 +20,9 @@ exports.generateRefreshToken = (id) => {
 // accessToken 유효성 검사
 exports.authenticateAccessToken = (req, res, next) => {
   const secretAccessToken = process.env.ACCESS_TOKEN_SECRET;
-  console.log(req.headers.cookie.split(" ")[1]);
+  console.log(req.headers);
+  // console.log("req.headers.cookie::",req.headers.cookie);
+  // console.log(req.headers.cookie.split(' ')[1]);
 
   // const token = req.headers.authorization.split(" ")[1];
   // console.log(token);
@@ -28,8 +30,9 @@ exports.authenticateAccessToken = (req, res, next) => {
   // const token = req.cookies.user;
   // console.log(token);
 
-  const token = req.headers.cookie.split("=")[1]
-  console.log(token);
+  // console.log(req.headers.cookie);
+  const token = req.headers.cookie.split('=')[1];
+  // console.log(token);
 
   try {
     req.decoded = jwt.verify(token, secretAccessToken);
