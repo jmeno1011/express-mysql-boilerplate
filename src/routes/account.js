@@ -2,7 +2,11 @@ const express = require('express');
 const logger = require('../config/winston');
 const route = express.Router();
 const jwt = require('jsonwebtoken');
-const { generateAccessToken, generateRefreshToken } = require('../models/jwt');
+const {
+  generateAccessToken,
+  generateRefreshToken,
+  authenticateAccessToken,
+} = require('../models/jwt');
 const { loginConfirm } = require('../models/loginConfirm');
 
 route.post('/login', (req, res, next) => {
@@ -29,7 +33,13 @@ route.post('/login', (req, res, next) => {
     .send({ msg: '로그인 되셨습니다.', act: accessToken, rfst: refreshToken });
 });
 
-route.get('/check', (req, res) => {});
+route.get('/check', authenticateAccessToken, (req, res) => {
+  const { id } = req.decoded;
+  if (!id) {
+    res.send(401).send({ code: 401, msg: '유효하지 않은 로그인 정보 입니다.' });
+  }
+  return;
+});
 
 route.get('/logout', (req, res) => {
   res.clearCookie('user');
