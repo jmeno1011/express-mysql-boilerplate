@@ -38,7 +38,7 @@ route.get('/check', authenticateAccessToken, (req, res) => {
   if (!id) {
     res.send(401).send({ code: 401, msg: '유효하지 않은 로그인 정보 입니다.' });
   }
-  return;
+  res.status(200).send(id);
 });
 
 route.get('/logout', (req, res) => {

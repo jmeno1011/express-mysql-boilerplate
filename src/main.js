@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 app.use('/', home);
 // account route
 app.use('/', account);
+// api route
 app.use('/api', authenticateAccessToken, api);
 
 app.listen(PORT, () => logger.info(`Running http://localhost:${PORT}`));
