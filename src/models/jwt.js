@@ -21,12 +21,14 @@ exports.generateRefreshToken = (id) => {
 exports.authenticateAccessToken = (req, res, next) => {
   const secretAccessToken = process.env.ACCESS_TOKEN_SECRET;
   const token = req.headers.cookie;
+  // accessToken 확인
+  // console.log("token::",token);
 
   if (!token) return next();
   try {
-    const decoded = jwt.verify(token.split('=')[1], secretAccessToken);
-    console.log(req.state);
+    // jwt 토큰 해석
     req.decoded = jwt.verify(token.split('=')[1], secretAccessToken);
+    // console.log("req.decoded::",req.decoded); // {id: id, iat: 1666076924, exp: 1666080524 }
     logger.info('try jwt.verify');
     return next();
   } catch (e) {
