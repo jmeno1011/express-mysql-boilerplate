@@ -46,8 +46,8 @@ route.get('/check', authenticateAccessToken, (req, res) => {
 });
 
 route.get('/logout', (req, res) => {
-  res.clearCookie('user');
-  res.status(200).send({ code: 200, msg: '로그아웃 되었습니다.' });
+  res.clearCookie('access_token');
+  res.status(200).send({ state: 200, msg: '로그아웃 되었습니다.' });
 });
 
 module.exports = route;
