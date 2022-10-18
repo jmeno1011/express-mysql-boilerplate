@@ -10,19 +10,19 @@ const {
 const { loginConfirm } = require('../models/loginConfirm');
 
 route.post('/login', (req, res, next) => {
-  const id = req.body.id;
-  const pw = req.body.pw;
+  const user_id = req.body.id;
+  const user_pw = req.body.pw;
 
-  const user = loginConfirm(id, pw);
+  const id = loginConfirm(user_id, user_pw);
 
-  if (user === undefined) {
+  if (id === undefined) {
     return res
       .status(401)
       .send({ msg: '아이디 또는 비밀번호를 잘못입력하셨습니다.' });
   }
 
-  let accessToken = generateAccessToken(user);
-  let refreshToken = generateRefreshToken(user);
+  let accessToken = generateAccessToken(id);
+  let refreshToken = generateRefreshToken(id);
 
   res.cookie('user', accessToken, {
     httpOnly: true,
@@ -30,7 +30,13 @@ route.post('/login', (req, res, next) => {
 
   return res
     .status(200)
-    .send({ msg: '로그인 되셨습니다.', act: accessToken, rfst: refreshToken });
+    .send({
+      state: 200,
+      id: id,
+      msg: '로그인 되셨습니다.',
+      act: accessToken,
+      rfst: refreshToken,
+    });
 });
 
 route.get('/check', authenticateAccessToken, (req, res) => {

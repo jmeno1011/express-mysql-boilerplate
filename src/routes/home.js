@@ -17,8 +17,9 @@ route.get('/token', authenticateAccessToken, (req, res) => {
         code: 401,
         msg: '유효하지 않은 로그인 정보 입니다. \n토큰 테스트 실패',
       });
+  }else{
+    res.status(200).send({ code: 200, msg: '토큰 테스트 성공', id: id });
   }
-  res.status(200).send({ code: 200, msg: '토큰 테스트 성공', id: id });
 });
 
 module.exports = route;

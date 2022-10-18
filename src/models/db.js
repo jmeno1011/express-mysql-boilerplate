@@ -8,6 +8,8 @@ const connection = mysql.createPool({
   password: dbcConfig.password,
   database: dbcConfig.database,
   multipleStatements: dbcConfig.multipleStatements,
+  // mysql시간과 server시간 추가
+  timezone: "Asia/Seoul",
 });
 
 module.exports = connection;
