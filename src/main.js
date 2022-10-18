@@ -9,7 +9,7 @@ const account = require('./routes/account.js');
 const api = require('./routes/api.js');
 const { authenticateAccessToken } = require('./models/jwt');
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4444;
 const app = express();
 
 app.use(morgan('dev'));
@@ -22,8 +22,8 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 // test home route
 app.use('/', home);
 // account route
-app.use('/', account);
+app.use('/api', account);
 // api route
-app.use('/api', authenticateAccessToken, api);
+// app.use('/api', authenticateAccessToken, api);
 
 app.listen(PORT, () => logger.info(`Running http://localhost:${PORT}`));
