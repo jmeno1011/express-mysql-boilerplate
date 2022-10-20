@@ -2,22 +2,17 @@ const express = require('express');
 const logger = require('../config/winston');
 const { authenticateAccessToken } = require('../models/jwt');
 const route = express.Router();
+
 const admin = require("firebase-admin");
 const serviceAccount = require("../../google-services.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
-route.get('/payload', (req, res) => {
-  const id = req.decoded.id;
-  return res
-    .status(200)
-    .send({ msg: '로그인 된 상태입니다.', data: { id: id } });
-});
-
 route.post('/send', (req, res)=>{
   const { title, text } = req.body;
-  let target_token = "ewwbk53vtkSHgvaYILwjkO:APA91bFzJm2u2Bb-ebZqKRWwreTaQ0p7qEc5ZmzOEoQsEM6vv_D0eS08HGvF13WgtT8vsQoyeYuUkHB6uFTuKirS7uWUNH-r6u5UNGzXePAP0EWflyXz2wVzP4-6_-XuAbw8abXnSldO"
+  let target_token = 
+  "dqpDiPHVj3FlnloRR5-KpM:APA91bEjHTzSp3VDafbNeEluoQYBT4yZlzUW9BFlbSosIuHGmylMoaKOjG8MSSIG7X_Kws0Z_iXs9rN0j3gjehSgp-OFtoilj4S_HYTdb8ZfaW0QVmxQfpgmpl_5UbN5vM2r8mO4C7UT"
   admin.messaging()
     .sendToDevice(
       [target_token],
