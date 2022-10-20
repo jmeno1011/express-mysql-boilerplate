@@ -22,7 +22,9 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 // test home route
 app.use('/', home);
 // account route
-app.use('/api', account);
+app.use('/', account);
+app.use('/api', api);
+
 // api route
 // app.use('/api', authenticateAccessToken, api);
 

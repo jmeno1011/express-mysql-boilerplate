@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "childcare-preproduct",
+    "private_key_id": "caa6c73595ea8e0bf403c2af3eec270b9e7eae00",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC7xtcfXk8PSRpS\n02UQpgxPC1KtjfS82u0tA9knjcEylEKz8SPXA9ZsM1/cT4LFWZwB0BTSLjezPJ5A\nnuXv6BaLO56glQtjN8wavC7rHguJ5mEeN3hK5vNDvzE+5bZSlVlgeRXHAeegq6sR\n7PctRnmMPZ6kNavLRBGe8rvMKX9b08MRlqx0ft1XFRBW8SYqcWkVUf5VsrKQLHQk\nLE+l1u8IHNZskVtG4tLMBJn11MNNZAu5A22FsaD2mG3yEDeIxutkWF3vKqM2bu4c\n8ePRCjIJPEIKYCm8eGgW+cVyeXFp1fpj+SFqrjLv8Wk9VgTeyuF9CZrLiGRVaCfT\nVwuZUYZZAgMBAAECggEAAqR2cAZRef9XG73GURDpIO6hm/ggrsys5EKG2ofj5VyR\nQLt+u96dtJmXen/y8OiFKcBeHqQQXBkZCANEbJcZRB3TamKWja+iE2k9Bsl+M5NW\noAh7TKCJ4VTuMjqk0W4xGwqxLAMCma/4wRCS3OP+P2M5mYl40Kw1TEWRr3qRBH+E\n8ppTw5fc7MMONvwAXKp9jw3fuRmt/DSJEzO+MsggWJ1zwStjSCKX6LjfLuyF7ZSp\n96ppUCO0n5rgAE3Fhmeeb2B4kY1zUMIjdsYDhg95AbbjmphVncYBNe61RIj/a87a\nh/LmOwI53T5/FWS0qJ9CHG4mYURw0R4eXsGCT6j/wQKBgQDqrPgif925VFo+Ovbg\nmQTmHIqoCy+hjg0y19oFOhpXAnpcs1SjINufqXbTV1yo4pVqUBFV1FNh/bY+QgZq\numfDxdqByY+S/ztLahnKZSSY79upo4zmrLMh0ROmVtlSVML32+shhrlVdcMOFufn\nP60ULWCD3r2dTOg29mmY/QFHOQKBgQDM1ugilBCnev9j1CmkYp90dKsV5jFvAHNs\nZWx6/aeZ1CRriHtloYRyREV98wFFEQ2g1Sq5pdfkiHaYAkQAP6eUJ6SqzNf1t83o\nz/8WI6g72VqtgJaNNydVsj9yhe9iGldovIl5SekaajB8Wgyrg4Ui9lhvbVzDIYAD\nfu4ff0oYIQKBgQCtB0WZIlAX8pLrKUyXwxsykz7EsiK3amZe43nzuqhrGP+hU/QG\npxZnvWpIXzSJrS7fiROPBhNIv+lcNBBJJxGU7k+yvCupBZjxfNRxP2vhe5CpnlYo\nSpN1TpO/ZG+t3aM3XyYZvRzvXvmnbMol3fQ+WUq9UEDcNzVMORkY3QrROQKBgQCj\naDltBEM46BT+VU0W9xoPM9cbtDPxQiHR8iMVBm8Cd0rKgek2jR/0a+Qn8ogrycve\nZs8bpGJSzE4XO491x1HvDaT+IEWTnppjxDHRPobBn8YHrRHs+3eklHqq6I+r6ima\nwvTETiLn0Jh3SvrahCPcXTr1QQAEJiBSKZrag5ffIQKBgQCsqYICY0UB3n70WYi3\noUDtSlGUd/aMOgx9Chmnpxj3GaDTEFBvx4OPuSKsGV1sXXnHQ8QOe0gqz1zGomWd\nZ4N5KiVgpIcey6SeCC5wvUWk4wITUp0PSkkeKPm8sfM/VnifAlMmyUvmM45aGG4K\nVSM+jYmCnZiPSIZSOLGlnXWwxg==\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-iy6kj@childcare-preproduct.iam.gserviceaccount.com",
+    "client_id": "106474866802505857102",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-iy6kj%40childcare-preproduct.iam.gserviceaccount.com"
+}
