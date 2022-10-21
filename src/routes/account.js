@@ -1,7 +1,6 @@
 const express = require('express');
-const logger = require('../config/winston');
 const route = express.Router();
-const jwt = require('jsonwebtoken');
+
 const {
   generateAccessToken,
   generateRefreshToken,

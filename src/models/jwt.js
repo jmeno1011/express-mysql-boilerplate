@@ -1,10 +1,14 @@
 const jwt = require('jsonwebtoken');
 const logger = require('../config/winston');
 
+// env파일 대신 선언
+const ACCESS_TOKEN_SECRET = "access_token";
+const REFRESH_TOKEN_SECRET = "refresh_token"
+
 // accessToken 발행
 exports.generateAccessToken = (id) => {
   // ACCESS_TOKEN_SECRET=accesstoken
-  return jwt.sign({ id }, process.env.ACCESS_TOKEN_SECRET, {
+  return jwt.sign({ id }, ACCESS_TOKEN_SECRET, {
     expiresIn: '1h',
   });
 };
@@ -12,14 +16,14 @@ exports.generateAccessToken = (id) => {
 // refreshToken 발행
 exports.generateRefreshToken = (id) => {
   // REFRESH_TOKEN_SECRET=refreshtoken
-  return jwt.sign({ id }, process.env.REFRESH_TOKEN_SECRET, {
+  return jwt.sign({ id }, REFRESH_TOKEN_SECRET, {
     expiresIn: '14 days',
   });
 };
 
 // accessToken 유효성 검사
 exports.authenticateAccessToken = (req, res, next) => {
-  const secretAccessToken = process.env.ACCESS_TOKEN_SECRET;
+  const secretAccessToken = ACCESS_TOKEN_SECRET;
   const token = req.headers.cookie;
   // accessToken 확인
   // console.log("token::",token);

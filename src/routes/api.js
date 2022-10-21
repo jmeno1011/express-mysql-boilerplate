@@ -1,6 +1,4 @@
 const express = require('express');
-const logger = require('../config/winston');
-const { authenticateAccessToken } = require('../models/jwt');
 const route = express.Router();
 
 const admin = require("firebase-admin");

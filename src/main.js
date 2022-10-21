@@ -7,7 +7,7 @@ const logger = require('./config/winston');
 const home = require('./routes/home.js');
 const account = require('./routes/account.js');
 const api = require('./routes/api.js');
-const { authenticateAccessToken } = require('./models/jwt');
+// const { authenticateAccessToken } = require('./models/jwt');
 
 const PORT = process.env.PORT || 4444;
 const app = express();
