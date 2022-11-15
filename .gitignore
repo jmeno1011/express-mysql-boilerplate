@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node
 # Edit at https://www.toptal.com/developers/gitignore?templates=node
 
+### google account key
+google-services.json
+
 ### Node ###
 # Logs
 logs
